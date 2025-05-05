@@ -1,0 +1,4 @@
+TYPE=eth
+DISABLED=no
+BOOTPROTO=static
+NM_CONTROLLED=no
