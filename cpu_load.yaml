@@ -1,0 +1,20 @@
+---
+- name: Check CPU and Memory Load
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Get CPU load
+      command: "uptime"
+      register: cpu_load
+
+    - name: Get Memory usage
+      command: "free -m"
+      register: memory_usage
+
+    - name: Display CPU Load
+      debug:
+        msg: "{{ cpu_load.stdout }}"
+
+    - name: Display Memory Usage
+      debug:
+        msg: "{{ memory_usage.stdout }}"
