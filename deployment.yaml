@@ -48,6 +48,9 @@
         src: astra/interfaces
         dest: /etc/network/interfaces
 
+    - name: Restart networking
+      shell: systemctl restart networking
+
     - name: Install the apache2 package
       apt:
         name: apache2
@@ -102,3 +105,6 @@
       copy:
         src: alt/ipv4route
         dest: /etc/net/ifaces/enp0s3/ipv4route
+
+    - name: Restart network
+      shell: systemctl restart network
